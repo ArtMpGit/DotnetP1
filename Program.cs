@@ -45,7 +45,7 @@ namespace P1.NET
 
         private static void ShowMenu()
         {
-            Console.WriteLine("1 - Register a new stock");
+            Console.WriteLine("1 - Register a new stock or increment its value");
             Console.WriteLine("2 - Search for an existing stock");
             Console.WriteLine("3 - Visualize all the registered stocks");
             Console.WriteLine("----------------------------------------------------------------------------------");
@@ -69,10 +69,10 @@ namespace P1.NET
         {
             try
             {
-                Console.Write("Choose a new code for the stock: ");
+                Console.Write("Stock code: ");
                 string stockCode = Console.ReadLine();
 
-                Console.Write("Now enter how many of those you want to register: ");
+                Console.Write("Stock quantity: ");
                 string quantityInput = Console.ReadLine();
 
                 int numericQuantity;
