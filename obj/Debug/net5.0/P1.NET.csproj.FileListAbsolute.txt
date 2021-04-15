@@ -1,0 +1,16 @@
+C:\Users\Arthu\Faculdade\P1.NET\bin\Debug\net5.0\P1.NET.exe
+C:\Users\Arthu\Faculdade\P1.NET\bin\Debug\net5.0\P1.NET.deps.json
+C:\Users\Arthu\Faculdade\P1.NET\bin\Debug\net5.0\P1.NET.runtimeconfig.json
+C:\Users\Arthu\Faculdade\P1.NET\bin\Debug\net5.0\P1.NET.runtimeconfig.dev.json
+C:\Users\Arthu\Faculdade\P1.NET\bin\Debug\net5.0\P1.NET.dll
+C:\Users\Arthu\Faculdade\P1.NET\bin\Debug\net5.0\ref\P1.NET.dll
+C:\Users\Arthu\Faculdade\P1.NET\bin\Debug\net5.0\P1.NET.pdb
+C:\Users\Arthu\Faculdade\P1.NET\obj\Debug\net5.0\P1.NET.csprojAssemblyReference.cache
+C:\Users\Arthu\Faculdade\P1.NET\obj\Debug\net5.0\P1.NET.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Arthu\Faculdade\P1.NET\obj\Debug\net5.0\P1.NET.AssemblyInfoInputs.cache
+C:\Users\Arthu\Faculdade\P1.NET\obj\Debug\net5.0\P1.NET.AssemblyInfo.cs
+C:\Users\Arthu\Faculdade\P1.NET\obj\Debug\net5.0\P1.NET.csproj.CoreCompileInputs.cache
+C:\Users\Arthu\Faculdade\P1.NET\obj\Debug\net5.0\P1.NET.dll
+C:\Users\Arthu\Faculdade\P1.NET\obj\Debug\net5.0\ref\P1.NET.dll
+C:\Users\Arthu\Faculdade\P1.NET\obj\Debug\net5.0\P1.NET.pdb
+C:\Users\Arthu\Faculdade\P1.NET\obj\Debug\net5.0\P1.NET.genruntimeconfig.cache
