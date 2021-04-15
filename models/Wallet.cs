@@ -20,7 +20,7 @@ namespace P1.NET.models
             int stockIndex = stocks.FindIndex(s => s.Code.ToLower().Equals(stock.Code.ToLower()));
             if (stockIndex >= 0)
             {
-                stocks[stockIndex].Quantity += stock.Quantity;
+                stocks[stockIndex].incrementQuantity(stock.Quantity);
                 Console.WriteLine("The stock was successfully incremented.");
             }
             else

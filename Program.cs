@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using P1.NET.exceptions;
 using P1.NET.models;
 
 namespace P1.NET
@@ -18,21 +19,21 @@ namespace P1.NET
             do
             {
                 Console.WriteLine("----------------------------------------------------------------------------------");
-                showMenu();
+                ShowMenu();
                 userOption = Console.ReadLine();
                 switch (userOption)
                 {
                     case "1":
-                        registerStock();
+                        RegisterStock();
                         break;
                     case "2":
-                        searchStock();
+                        SearchStock();
                         break;
                     case "3":
-                        visualizeRegisteredStocks();
+                        VisualizeRegisteredStocks();
                         break;
                     default:
-                        exitMenu();
+                        ExitMenu();
                         break;
                 }
 
@@ -42,7 +43,7 @@ namespace P1.NET
             Console.WriteLine("----------------------------------------------------------------------------------");
         }
 
-        private static void showMenu()
+        private static void ShowMenu()
         {
             Console.WriteLine("1 - Register a new stock");
             Console.WriteLine("2 - Search for an existing stock");
@@ -50,7 +51,7 @@ namespace P1.NET
             Console.WriteLine("----------------------------------------------------------------------------------");
         }
 
-        private static void visualizeRegisteredStocks()
+        private static void VisualizeRegisteredStocks()
         {
             if (wallet.Stocks.Count > 0)
             {
@@ -64,18 +65,32 @@ namespace P1.NET
             else Console.WriteLine("There are no stocks registered yet.");
         }
 
-        private static void registerStock()
+        private static void RegisterStock()
         {
-            Console.Write("Choose a new code for the stock: ");
-            string stockCode = Console.ReadLine();
+            try
+            {
+                Console.Write("Choose a new code for the stock: ");
+                string stockCode = Console.ReadLine();
 
-            Console.Write("Now enter how many of those you want to register: ");
-            int stockQuantity = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Now enter how many of those you want to register: ");
+                string quantityInput = Console.ReadLine();
 
-            wallet.registerStock(new Stock(stockCode, stockQuantity));
+                int numericQuantity;
+                bool successfulParse = Int32.TryParse(quantityInput, out numericQuantity);
+                if (successfulParse)
+                {
+                    wallet.registerStock(new Stock(stockCode, numericQuantity));
+                }
+                else throw new InvalidQuantityException("The inserted value is not valid!");
+            }
+            catch (InvalidQuantityException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
         }
 
-        private static void searchStock()
+        private static void SearchStock()
         {
             Console.Write("Please, inform us the stock code you are looking for: ");
             string searchedStockCode = Console.ReadLine();
@@ -92,7 +107,7 @@ namespace P1.NET
             }
         }
 
-        private static void exitMenu()
+        private static void ExitMenu()
         {
             string userChoice;
             do
@@ -106,6 +121,16 @@ namespace P1.NET
 
             } while (!userChoice.Equals("y") && !userChoice.Equals("n"));
 
+        }
+
+        private static void ValidateQuantity(string inputQuantity)
+        {
+            int numericQuantity;
+            bool successfulParse = Int32.TryParse(inputQuantity, out numericQuantity);
+            if (!successfulParse)
+            {
+                throw new InvalidQuantityException("The inserted value is not valid!");
+            }
         }
 
     }

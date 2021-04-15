@@ -20,5 +20,10 @@ namespace P1.NET.models
             this.code = code;
             this.quantity = quantity;
         }
+
+        public void incrementQuantity(int valueToSum)
+        {
+            quantity += valueToSum;
+        }
     }
 }
